@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Jiang Yingying</title>
 
 <style>
+/* ===== RESET ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -14,11 +15,52 @@ body{
   line-height:1.75;
 }
 img{width:100%;display:block}
-section{padding:110px 8vw}
-p{max-width:760px;opacity:.85}
-h1,h2{font-weight:500;letter-spacing:.4px}
 
-/* HERO */
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  padding:20px 8vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:10;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+}
+nav span{
+  font-weight:500;
+  letter-spacing:.5px;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  opacity:.7;
+  margin-left:24px;
+  font-size:14px;
+}
+nav a:hover{opacity:1}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:120px 8vw;
+}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+}
+p{
+  max-width:720px;
+  opacity:.85;
+}
+h1,h2{
+  font-weight:500;
+  letter-spacing:.4px;
+  margin-bottom:24px;
+}
+
+/* ===== HERO ===== */
 .hero{
   position:relative;
   height:100vh;
@@ -36,7 +78,7 @@ h1,h2{font-weight:500;letter-spacing:.4px}
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.5);
+  background:rgba(0,0,0,.55);
 }
 .hero-inner{
   position:relative;
@@ -49,61 +91,77 @@ h1,h2{font-weight:500;letter-spacing:.4px}
   padding:0 20px;
 }
 .hero-inner h1{
-  font-size:clamp(36px,6vw,64px);
-  margin-bottom:20px;
+  font-size:clamp(36px,6vw,60px);
 }
 .hero-inner p{
   font-size:18px;
-  max-width:680px;
+  margin-top:18px;
 }
 
-/* TEXT BLOCK */
-.text-block{
-  padding-top:140px;
-  padding-bottom:140px;
+/* ===== TEXT FIRST ===== */
+.text-only{
+  padding-top:160px;
+  padding-bottom:160px;
 }
 
-/* SPLIT */
-.split{
+/* ===== IMAGE + TEXT (CONTROLLED) ===== */
+.block{
   display:grid;
-  grid-template-columns:1.2fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:80px;
   align-items:center;
 }
-.split.reverse{
-  grid-template-columns:1fr 1.2fr;
+.block img{
+  max-width:420px;
+  opacity:.9;
 }
 
-/* SINGLE IMAGE */
-.full-image{
-  padding:0;
+/* ===== IMAGE CENTERED (SMALL) ===== */
+.image-center{
+  display:flex;
+  justify-content:center;
+  margin-top:60px;
 }
-.full-image img{
-  height:80vh;
-  object-fit:cover;
-}
-
-/* FOOTER */
-.footer{
-  padding:120px 8vw 80px;
-  font-size:15px;
-  opacity:.7;
+.image-center img{
+  max-width:520px;
+  opacity:.85;
 }
 
-/* MOBILE */
+/* ===== FOOTER ===== */
+footer{
+  padding:140px 8vw 80px;
+  font-size:14px;
+  opacity:.6;
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:900px){
+  nav{padding:16px 6vw}
   section{padding:80px 6vw}
-  .hero{height:90vh}
-  .split,.split.reverse{
+  .block{
     grid-template-columns:1fr;
     gap:40px;
   }
-  .full-image img{height:60vh}
+  .block img,
+  .image-center img{
+    max-width:100%;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- NAV -->
+<nav>
+  <span>Jiang Yingying</span>
+  <div>
+    <a href="#about">About</a>
+    <a href="#industry">Perspective</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -122,90 +180,96 @@ h1,h2{font-weight:500;letter-spacing:.4px}
 </section>
 
 <!-- INTRO -->
-<section class="text-block">
-  <p>
-    I don’t rely on titles or surface narratives.
-    What matters is how structure, responsibility,
-    and restraint shape outcomes over time.
-  </p>
+<section class="text-only">
+  <div class="container">
+    <p>
+      I don’t rely on titles or surface narratives.
+      What matters is how structure, responsibility,
+      and restraint shape outcomes over time.
+    </p>
+  </div>
 </section>
 
 <!-- ABOUT -->
-<section class="split">
-  <img src="profile-01.jpg" alt="">
-  <div>
-    <h2>About</h2>
-    <p>
-      I entered this field through direct exposure to operational reality.
-      Certain experiences shaped how I evaluate risk, quality,
-      and sustainability.
-    </p>
+<section id="about">
+  <div class="container block">
+    <div>
+      <h2>About</h2>
+      <p>
+        I entered this field through direct exposure to operational reality.
+        Certain experiences shaped how I evaluate risk, quality,
+        and sustainability.
+      </p>
+    </div>
+    <img src="profile-01.jpg" alt="">
   </div>
-</section>
-
-<!-- INDUSTRY IMAGE -->
-<section class="full-image">
-  <img src="industry-01.jpg" alt="">
 </section>
 
 <!-- INDUSTRY -->
-<section class="text-block">
-  <h2>Industry Perspective</h2>
-  <p>
-    Short-term excitement often hides structural weakness.
-    Long-term value requires discipline, boundaries,
-    and patience.
-  </p>
+<section id="industry">
+  <div class="container">
+    <h2>Industry Perspective</h2>
+    <p>
+      Short-term excitement often hides structural weakness.
+      Long-term value requires discipline, boundaries,
+      and patience.
+    </p>
+
+    <div class="image-center">
+      <img src="industry-01.jpg" alt="">
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="split reverse">
-  <div>
-    <h2>Experience</h2>
-    <p>
-      I focus on complexity handled rather than titles held —
-      responsibility, uncertainty, and execution.
-    </p>
+<section id="experience">
+  <div class="container block">
+    <div>
+      <h2>Experience</h2>
+      <p>
+        I focus on complexity handled rather than titles held —
+        responsibility, uncertainty, and execution.
+      </p>
+    </div>
+    <img src="work-01.jpg" alt="">
   </div>
-  <img src="work-01.jpg" alt="">
 </section>
 
 <!-- METHOD -->
-<section class="split">
-  <img src="detail-01.jpg" alt="">
-  <div>
-    <h2>Method & Values</h2>
-    <p>
-      Efficiency must serve clarity.
-      Data informs judgment but never replaces it.
-      Pressure is inevitable — instability is optional.
-    </p>
+<section>
+  <div class="container block">
+    <div>
+      <h2>Method & Values</h2>
+      <p>
+        Efficiency must serve clarity.
+        Data informs judgment but never replaces it.
+        Pressure is inevitable — instability is optional.
+      </p>
+    </div>
+    <img src="detail-01.jpg" alt="">
   </div>
 </section>
 
 <!-- LOCATION -->
-<section class="split reverse">
-  <div>
-    <h2>Based In</h2>
-    <p>
-      Working across regions with a grounded physical presence.
-      No abstraction. No performance.
-    </p>
+<section>
+  <div class="container block">
+    <div>
+      <h2>Based In</h2>
+      <p>
+        Working across regions with a grounded physical presence.
+        No abstraction. No performance.
+      </p>
+    </div>
+    <img src="location-01.jpg" alt="">
   </div>
-  <img src="location-01.jpg" alt="">
-</section>
-
-<!-- EVENT -->
-<section class="full-image">
-  <img src="event-01.jpg" alt="">
 </section>
 
 <!-- FOOTER -->
-<section class="footer">
+<footer id="contact">
   Jiang Yingying<br>
   Long-term industry perspective<br><br>
   contact@email.com
-</section>
+</footer>
 
 </body>
 </html>
