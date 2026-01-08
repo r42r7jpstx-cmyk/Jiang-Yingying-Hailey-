@@ -1,222 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rejuve Trade Center</title>
 
-<title>Jiang Yingying</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<meta name="description" content="A personal professional platform sharing industry perspective, lived experience, and long-term judgment.">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-<style>
-:root{
-  --max-width:1200px;
-  --text-width:720px;
-  --gray:#6b7280;
-  --light:#f6f7f9;
-}
+    /* =======================
+       HERO VIDEO
+    ======================= */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-*{box-sizing:border-box}
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
-  line-height:1.8;
-  color:#111;
-  background:#fff;
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
 
-/* layout */
-.container{
-  max-width:var(--max-width);
-  margin:auto;
-  padding:110px 20px;
-}
-.text{
-  max-width:var(--text-width);
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-h1{
-  font-size:52px;
-  margin-bottom:18px;
-  font-weight:500;
-}
-h2{
-  font-size:34px;
-  margin-bottom:18px;
-  font-weight:500;
-}
-h3{
-  font-size:13px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--gray);
-  margin-bottom:14px;
-}
-p{
-  font-size:16px;
-  color:#444;
-  margin-bottom:18px;
-}
+    .hero-content h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
 
-/* HERO — Optimized B version */
-.hero{
-  height:78vh;
-  max-height:820px;
-  min-height:520px;
-  display:flex;
-  align-items:flex-end;
-  background:
-    linear-gradient(
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.55)
-    ),
-    url("hero-01.jpg") center top / cover no-repeat;
-  color:#fff;
-}
-.hero-inner{
-  max-width:var(--max-width);
-  margin:auto;
-  padding:0 20px 90px;
-}
-.hero p{
-  max-width:620px;
-  font-size:18px;
-  color:#e5e7eb;
-}
+    .hero-content p {
+      font-size: clamp(16px, 2.2vw, 20px);
+      max-width: 720px;
+      opacity: 0.85;
+      margin: 0 auto;
+    }
 
-/* second visual */
-.visual{
-  height:60vh;
-  background:url("hero-02.jpg") center/cover no-repeat;
-}
+    /* =======================
+       BASIC SECTION STYLE
+    ======================= */
+    section {
+      padding: 100px 8vw;
+      background: #000;
+    }
 
-/* grid */
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-.grid img{
-  width:100%;
-  border-radius:22px;
-}
+    section h2 {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
 
-/* light section */
-.light{
-  background:var(--light);
-}
+    section p {
+      max-width: 900px;
+      opacity: 0.85;
+    }
 
-/* cards */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:34px;
-}
-
-/* footer */
-footer{
-  padding:90px 20px;
-  border-top:1px solid #eee;
-}
-footer p{
-  font-size:14px;
-  color:var(--gray);
-}
-
-/* mobile */
-@media(max-width:900px){
-  h1{font-size:38px}
-  h2{font-size:28px}
-  .container{padding:80px 16px}
-  .grid{grid-template-columns:1fr}
-  .hero{
-    height:70vh;
-  }
-  .hero-inner{
-    padding-bottom:60px;
-  }
-}
-</style>
+    /* =======================
+       RESPONSIVE
+    ======================= */
+    @media (max-width: 768px) {
+      .hero {
+        height: 90vh;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Jiang Yingying</h1>
-    <p>
-      A personal professional platform sharing long-term industry understanding,
-      lived experience, and professional judgment across luxury beauty
-      and medical aesthetics.
-    </p>
-  </div>
-</section>
+  <!-- =======================
+       HERO
+  ======================= -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="hero.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-<!-- SECOND VISUAL -->
-<section class="visual"></section>
-
-<!-- ABOUT -->
-<section class="container">
-  <div class="grid">
-    <img src="profile-01.jpg" alt="">
-    <div class="text">
-      <h3>About</h3>
-      <h2>Entering the Industry Through Practice</h2>
-      <p>
-        I did not enter this industry through a single title or opportunity,
-        but through a gradual accumulation of responsibility, observation,
-        and real operational exposure.
-      </p>
-      <p>
-        Sustainable outcomes depend less on momentum, and more on structure,
-        judgment, and long-term alignment.
-      </p>
+    <div class="hero-content">
+      <div>
+        <h1>Rejuve Trade Center</h1>
+        <p>
+          A specialized medical & aesthetic device trade platform connecting
+          global manufacturers with premium clinical partners.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- INDUSTRY -->
-<section class="container light">
-  <h3>Industry Perspective</h3>
-  <h2>What the Industry Often Overlooks</h2>
-
-  <div class="cards">
-    <img src="industry-01.jpg">
-    <img src="industry-02.jpg">
-    <img src="industry-03.jpg">
-  </div>
-
-  <div class="text">
+  <!-- =======================
+       COMPANY OVERVIEW
+  ======================= -->
+  <section>
+    <h2>Company Overview</h2>
     <p>
-      The most critical work often happens quietly — in planning, calibration,
-      and ethical boundaries.
+      Rejuve Trade Center is dedicated to the global distribution of advanced
+      medical and aesthetic technologies. We focus on compliance-driven trade,
+      long-term clinical partnerships, and reliable international logistics.
     </p>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="container">
-  <div class="grid">
-    <div class="text">
-      <h3>Experience</h3>
-      <h2>Execution and Responsibility</h2>
-      <p>
-        Execution is not speed, but consistency under pressure.
-      </p>
-    </div>
-    <img src="work-01.jpg">
-  </div>
-</section>
-
-<footer>
-  <div class="text">
-    <p>© Jiang Yingying</p>
-  </div>
-</footer>
+  </section>
 
 </body>
 </html>
-
