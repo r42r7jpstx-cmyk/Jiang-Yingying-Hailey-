@@ -6,83 +6,55 @@
 <title>Jiang Yingying</title>
 
 <style>
-/* ===== RESET ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   background:#000;
   color:#fff;
-  line-height:1.75;
+  line-height:1.8;
 }
 img{width:100%;display:block}
+section{padding:120px 8vw}
+.container{max-width:1100px;margin:0 auto}
+h1,h2,h3{font-weight:500;letter-spacing:.4px}
+p{max-width:760px;opacity:.85}
 
-/* ===== NAV ===== */
+/* NAV */
 nav{
   position:fixed;
-  top:0;left:0;
-  width:100%;
-  padding:20px 8vw;
+  top:0;left:0;width:100%;
+  padding:18px 8vw;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  z-index:10;
   background:rgba(0,0,0,.35);
   backdrop-filter:blur(6px);
+  z-index:10;
 }
-nav span{
-  font-weight:500;
-  letter-spacing:.5px;
-}
+nav span{font-weight:500}
 nav a{
   color:#fff;
   text-decoration:none;
-  opacity:.7;
-  margin-left:24px;
   font-size:14px;
+  margin-left:24px;
+  opacity:.7;
 }
 nav a:hover{opacity:1}
 
-/* ===== SECTIONS ===== */
-section{
-  padding:120px 8vw;
-}
-.container{
-  max-width:1100px;
-  margin:0 auto;
-}
-p{
-  max-width:720px;
-  opacity:.85;
-}
-h1,h2{
-  font-weight:500;
-  letter-spacing:.4px;
-  margin-bottom:24px;
-}
-
-/* ===== HERO ===== */
-.hero{
-  position:relative;
-  height:100vh;
-  overflow:hidden;
-}
+/* HERO */
+.hero{position:relative;height:100vh;overflow:hidden}
 .hero video{
-  position:absolute;
-  top:50%;left:50%;
-  min-width:100%;
-  min-height:100%;
+  position:absolute;top:50%;left:50%;
+  min-width:100%;min-height:100%;
   transform:translate(-50%,-50%);
   object-fit:cover;
 }
 .hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
+  content:"";position:absolute;inset:0;
   background:rgba(0,0,0,.55);
 }
 .hero-inner{
-  position:relative;
-  z-index:2;
+  position:relative;z-index:2;
   height:100%;
   display:flex;
   align-items:center;
@@ -94,76 +66,56 @@ h1,h2{
   font-size:clamp(36px,6vw,60px);
 }
 .hero-inner p{
-  font-size:18px;
   margin-top:18px;
+  font-size:18px;
 }
 
-/* ===== TEXT FIRST ===== */
-.text-only{
-  padding-top:160px;
-  padding-bottom:160px;
-}
-
-/* ===== IMAGE + TEXT (CONTROLLED) ===== */
+/* LAYOUT */
+.text-only{padding-top:160px;padding-bottom:160px}
 .block{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:80px;
   align-items:center;
 }
-.block img{
-  max-width:420px;
-  opacity:.9;
-}
+.block img{max-width:480px}
 
-/* ===== IMAGE CENTERED (SMALL) ===== */
+/* IMAGE CENTER */
 .image-center{
   display:flex;
   justify-content:center;
   margin-top:60px;
 }
-.image-center img{
-  max-width:520px;
-  opacity:.85;
-}
+.image-center img{max-width:520px}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   padding:140px 8vw 80px;
   font-size:14px;
   opacity:.6;
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:900px){
-  nav{padding:16px 6vw}
   section{padding:80px 6vw}
-  .block{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-  .block img,
-  .image-center img{
-    max-width:100%;
-  }
+  .block{grid-template-columns:1fr;gap:40px}
+  .block img,.image-center img{max-width:100%}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <span>Jiang Yingying</span>
   <div>
-    <a href="#about">About</a>
-    <a href="#industry">Perspective</a>
-    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#perspective">Perspective</a>
+    <a href="#background">Background</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <video autoplay muted loop playsinline>
     <source src="hero.mp4" type="video/mp4">
@@ -172,101 +124,112 @@ footer{
     <div>
       <h1>Jiang Yingying</h1>
       <p>
-        Long-term judgment, operational clarity,
-        and respect for how decisions age over time.
+        Progress, not perfection.<br>
+        Building systems where experience becomes a repeatable result.
       </p>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
 <section class="text-only">
   <div class="container">
     <p>
-      I don’t rely on titles or surface narratives.
-      What matters is how structure, responsibility,
-      and restraint shape outcomes over time.
+      My work lives at the intersection of two worlds:
+      Swiss luxury beauty brand growth and medical aesthetics management.
+      What connects them is simple — turning experience into systems,
+      and judgment into long-term trust.
     </p>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<section id="work">
   <div class="container block">
     <div>
-      <h2>About</h2>
+      <h2>Luxury Beauty · La Prairie</h2>
       <p>
-        I entered this field through direct exposure to operational reality.
-        Certain experiences shaped how I evaluate risk, quality,
-        and sustainability.
-      </p>
-    </div>
-    <img src="profile-01.jpg" alt="">
-  </div>
-</section>
-
-<!-- INDUSTRY -->
-<section id="industry">
-  <div class="container">
-    <h2>Industry Perspective</h2>
-    <p>
-      Short-term excitement often hides structural weakness.
-      Long-term value requires discipline, boundaries,
-      and patience.
-    </p>
-
-    <div class="image-center">
-      <img src="industry-01.jpg" alt="">
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container block">
-    <div>
-      <h2>Experience</h2>
-      <p>
-        I focus on complexity handled rather than titles held —
-        responsibility, uncertainty, and execution.
+        As Regional Marketing Director for California, I participate in
+        strategic decision-making and translate direction into execution —
+        from sales planning and retail operations to VIP engagement
+        and data-driven reporting.
       </p>
     </div>
     <img src="work-01.jpg" alt="">
   </div>
 </section>
 
-<!-- METHOD -->
 <section>
   <div class="container block">
+    <img src="industry-01.jpg" alt="">
     <div>
-      <h2>Method & Values</h2>
+      <h2>Medical Aesthetics</h2>
       <p>
-        Efficiency must serve clarity.
-        Data informs judgment but never replaces it.
-        Pressure is inevitable — instability is optional.
+        Through BioMed Systems and medical aesthetics salons,
+        I work with dermatology and aesthetic clinics to introduce
+        advanced technologies and non-invasive treatment systems,
+        prioritizing safety, personalization, and long-term outcomes.
       </p>
     </div>
-    <img src="detail-01.jpg" alt="">
   </div>
 </section>
 
-<!-- LOCATION -->
+<section id="perspective">
+  <div class="container">
+    <h2>Industry Perspective</h2>
+    <p>
+      Beauty is not a result — it is a process of continuous optimization.
+      Short-term excitement fades; systems, data, and trust compound.
+    </p>
+    <div class="image-center">
+      <img src="industry-02.jpg">
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="container block">
+    <div>
+      <h2>Professional Foundation</h2>
+      <p>
+        From economics at UCLA to marketing and finance at Oxford,
+        followed by research at USC and early industry training at Shiseido,
+        my background shaped how I understand structure, operations,
+        and cross-cultural brand systems.
+      </p>
+    </div>
+    <img src="profile-01.jpg">
+  </div>
+</section>
+
+<section>
+  <div class="container block">
+    <img src="detail-01.jpg">
+    <div>
+      <h2>Method & Values</h2>
+      <p>
+        I don’t rely on inspiration.
+        I trust systems that can be verified,
+        decisions that return to data,
+        and composure under pressure.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container block">
     <div>
       <h2>Based In</h2>
       <p>
-        Working across regions with a grounded physical presence.
-        No abstraction. No performance.
+        Newport Beach, California.<br>
+        Working globally, grounded locally.
       </p>
     </div>
-    <img src="location-01.jpg" alt="">
+    <img src="location-01.jpg">
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
-  Jiang Yingying<br>
+  Jiang Yingying · Newport Beach, CA<br>
   Long-term industry perspective<br><br>
   contact@email.com
 </footer>
