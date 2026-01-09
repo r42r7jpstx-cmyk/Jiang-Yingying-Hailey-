@@ -12,10 +12,6 @@
   --dark:#0c1622;
   --dark-soft:#111c2a;
   --gray:#7a8699;
-
-  /* HERO SAFE GRID – STABLE */
-  --hero-safe-width:960px;
-  --hero-safe-left:clamp(18vw, 22vw, 26vw);
 }
 *{box-sizing:border-box}
 body{
@@ -50,74 +46,51 @@ nav a{
   text-transform:uppercase;
 }
 
-/* HERO */
+/* =========================
+   HERO – SPLIT LAYOUT (FINAL)
+   ========================= */
 .hero{
-  position:relative;
   min-height:92vh;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  background:var(--dark);
+  display:grid;
+  grid-template-columns:420px 1fr;
+  background:#0c1622;
 }
+
+.hero-inner{
+  padding:0 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#fff;
+}
+
+.hero-inner h1{
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:18px;
+}
+
+.hero-inner p{
+  font-size:15px;
+  line-height:1.6;
+  color:#d1d5db;
+  max-width:320px;
+}
+
 .hero video{
-  position:absolute;
-  top:50%;left:50%;
   width:100%;
   height:100%;
   object-fit:cover;
-  transform:translate(-50%,-50%);
-  z-index:1;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    rgba(12,22,34,.65),
-    rgba(12,22,34,.85)
-  );
-  z-index:2;
 }
 
-/* HERO CONTENT – NO ANIMATION */
-.hero-inner{
-  position:relative;
-  z-index:3;
-  max-width:var(--hero-safe-width);
-  width:100%;
-  margin-left:var(--hero-safe-left);
-  margin-right:auto;
-  color:#fff;
-}
-.hero-inner h1{
-  font-size:56px;
-  margin-bottom:22px;
-  max-width:12ch;
-}
-.hero-inner p{
-  max-width:720px;
-  font-size:18px;
-  color:#e5e7eb;
-}
-
-/* HERO CONTEXT – STABLE */
-.hero-context{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:3;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(229,231,235,.45);
-}
-.hero-context.left{
-  left:var(--hero-safe-left);
-}
-.hero-context.right{
-  left:calc(var(--hero-safe-left) + var(--hero-safe-width));
-  transform:translate(-100%,-50%);
-  text-align:right;
+/* HERO mobile */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+  .hero-inner{
+    padding:80px 24px;
+  }
 }
 
 /* SECTIONS */
@@ -165,6 +138,7 @@ p{font-size:16px;color:#444;margin-bottom:18px}
 }
 .industry-image img{
   width:100%;
+  display:block;
   border-radius:18px;
 }
 
@@ -175,22 +149,19 @@ footer{
   color:#cbd5e1;
 }
 .footer-inner{
-  max-width:760px;
+  max-width:720px;
   margin:auto;
   text-align:center;
   font-size:14px;
-  line-height:1.8;
 }
 
 /* RESPONSIVE */
 @media(max-width:1399px){
-  .hero-inner h1{font-size:46px}
+  .container{padding:100px 20px}
 }
 @media(max-width:900px){
-  .hero-inner h1{font-size:38px}
   .container{padding:80px 16px}
   .block,.block.reverse{grid-template-columns:1fr}
-  .hero-context{display:none}
 }
 </style>
 </head>
@@ -209,18 +180,17 @@ footer{
 
 <!-- HERO -->
 <section id="hero" class="hero">
-  <div class="hero-context left">Beauty · Medical Aesthetics</div>
-  <div class="hero-context right">Newport Beach, CA</div>
-  <video autoplay muted loop playsinline preload="auto">
-    <source src="hero.mp4" type="video/mp4">
-  </video>
   <div class="hero-inner">
-    <h1>Jiang Yingying</h1>
+    <h1>Jiang<br>Yingying</h1>
     <p>
-      I believe beauty is not a result, but a continuous optimization process.  
+      I believe beauty is not a result,
+      but a continuous optimization process.
       Progress, not perfection.
     </p>
   </div>
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
 </section>
 
 <!-- OBSERVATION -->
@@ -244,7 +214,7 @@ footer{
   </div>
 </section>
 
-<!-- ABOUT TIMELINE -->
+<!-- ABOUT -->
 <section id="about" class="container">
   <div class="block">
     <img src="profile-01.jpg">
@@ -431,11 +401,8 @@ footer{
 
 <footer>
   <div class="footer-inner">
-    Jiang Yingying<br><br>
-    <strong>Work Email</strong><br>
-    haileyjiang1018@gmail.com<br><br>
-    <strong>Company Address</strong><br>
-    601 Newport Center Dr, Newport Beach, CA 92660
+    Jiang Yingying<br>
+    Long-term industry perspective
   </div>
 </footer>
 
