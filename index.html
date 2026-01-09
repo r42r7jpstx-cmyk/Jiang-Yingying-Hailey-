@@ -47,7 +47,7 @@ nav a{
 }
 
 /* =========================
-   HERO – SPLIT LAYOUT (FINAL)
+   HERO – SPLIT LAYOUT
    ========================= */
 .hero{
   min-height:92vh;
@@ -83,7 +83,20 @@ nav a{
   object-fit:cover;
 }
 
-/* HERO mobile */
+/* FULLSCREEN / LARGE SCREEN */
+@media(min-width:1440px){
+  .hero{
+    grid-template-columns:360px 1fr;
+  }
+  .hero-inner{
+    padding-left:72px;
+  }
+  .hero-inner h1{
+    font-size:44px;
+  }
+}
+
+/* MOBILE HERO */
 @media(max-width:900px){
   .hero{
     grid-template-columns:1fr;
@@ -93,7 +106,9 @@ nav a{
   }
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+   ========================= */
 .container{
   max-width:var(--max-width);
   margin:auto;
@@ -149,10 +164,11 @@ footer{
   color:#cbd5e1;
 }
 .footer-inner{
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   text-align:center;
   font-size:14px;
+  line-height:1.8;
 }
 
 /* RESPONSIVE */
@@ -401,8 +417,11 @@ footer{
 
 <footer>
   <div class="footer-inner">
-    Jiang Yingying<br>
-    Long-term industry perspective
+    Jiang Yingying<br><br>
+    <strong>Work Email</strong><br>
+    haileyjiang1018@gmail.com<br><br>
+    <strong>Company Address</strong><br>
+    601 Newport Center Dr, Newport Beach, CA 92660
   </div>
 </footer>
 
