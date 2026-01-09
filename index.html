@@ -52,13 +52,14 @@ nav a{
   min-height:92vh;
   display:flex;
   align-items:center;
-  overflow:hidden;
+  overflow:hidden; /* 关键：彻底防止任何内容溢出视频 */
   background:var(--dark);
 }
 .hero video{
   position:absolute;
   top:50%;left:50%;
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   object-fit:cover;
   transform:translate(-50%,-50%);
   z-index:1;
@@ -76,9 +77,9 @@ nav a{
 .hero-inner{
   position:relative;
   z-index:3;
-  max-width:var(--max-width);
+  max-width:1100px; /* 收紧宽度，保证不越界 */
   margin:auto;
-  padding:0 20px;
+  padding:0 28px;
   color:#fff;
 }
 .hero-inner h1{
@@ -144,6 +145,16 @@ p{font-size:16px;color:#444;margin-bottom:18px}
 }
 .section-dark p{color:#cbd5e1}
 .section-dark h2{color:#fff}
+
+/* INDUSTRY IMAGE (正文图) */
+.industry-image{
+  margin:48px 0;
+}
+.industry-image img{
+  width:100%;
+  display:block;
+  border-radius:18px;
+}
 
 /* FOOTER */
 footer{
@@ -307,6 +318,12 @@ footer{
   <div class="text-column">
     <h3>Industry Perspective</h3>
     <h2>Long-Term Trust Over Short-Term Excitement</h2>
+
+    <!-- 正文图 -->
+    <div class="industry-image">
+      <img src="industry-perspective.jpg" alt="Industry Perspective">
+    </div>
+
     <p>
       In beauty and medical aesthetics, short-term stimulation is easy.
       Sustainable value, however, requires discipline, structure,
