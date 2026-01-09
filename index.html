@@ -13,9 +13,9 @@
   --dark-soft:#111c2a;
   --gray:#7a8699;
 
-  /* HERO SAFE GRID – FINAL */
-  --hero-safe-width:880px;
-  --hero-safe-left:clamp(14vw, 20vw, 24vw);
+  /* HERO SAFE GRID – STABLE */
+  --hero-safe-width:960px;
+  --hero-safe-left:clamp(18vw, 22vw, 26vw);
 }
 *{box-sizing:border-box}
 body{
@@ -67,7 +67,6 @@ nav a{
   object-fit:cover;
   transform:translate(-50%,-50%);
   z-index:1;
-  animation:hero-video-zoom 18s ease-in-out infinite alternate;
 }
 .hero::after{
   content:'';
@@ -80,7 +79,7 @@ nav a{
   z-index:2;
 }
 
-/* HERO CONTENT */
+/* HERO CONTENT – NO ANIMATION */
 .hero-inner{
   position:relative;
   z-index:3;
@@ -94,20 +93,14 @@ nav a{
   font-size:56px;
   margin-bottom:22px;
   max-width:12ch;
-  opacity:0;
-  transform:translateY(16px);
-  animation:hero-text-in 1.2s ease forwards .35s;
 }
 .hero-inner p{
   max-width:720px;
   font-size:18px;
   color:#e5e7eb;
-  opacity:0;
-  transform:translateY(16px);
-  animation:hero-text-in 1.2s ease forwards .65s;
 }
 
-/* HERO CONTEXT */
+/* HERO CONTEXT – STABLE */
 .hero-context{
   position:absolute;
   top:50%;
@@ -117,8 +110,6 @@ nav a{
   letter-spacing:.14em;
   text-transform:uppercase;
   color:rgba(229,231,235,.45);
-  opacity:0;
-  animation:hero-context-in 1.4s ease forwards 1.1s;
 }
 .hero-context.left{
   left:var(--hero-safe-left);
@@ -127,18 +118,6 @@ nav a{
   left:calc(var(--hero-safe-left) + var(--hero-safe-width));
   transform:translate(-100%,-50%);
   text-align:right;
-}
-
-/* ANIMATIONS */
-@keyframes hero-video-zoom{
-  from{transform:translate(-50%,-50%) scale(1)}
-  to{transform:translate(-50%,-50%) scale(1.06)}
-}
-@keyframes hero-text-in{
-  to{opacity:1;transform:translateY(0)}
-}
-@keyframes hero-context-in{
-  to{opacity:1}
 }
 
 /* SECTIONS */
@@ -181,7 +160,9 @@ p{font-size:16px;color:#444;margin-bottom:18px}
 .section-dark h2{color:#fff}
 
 /* INDUSTRY IMAGE */
-.industry-image{margin:48px 0}
+.industry-image{
+  margin:48px 0;
+}
 .industry-image img{
   width:100%;
   border-radius:18px;
@@ -194,10 +175,11 @@ footer{
   color:#cbd5e1;
 }
 .footer-inner{
-  max-width:720px;
+  max-width:760px;
   margin:auto;
   text-align:center;
   font-size:14px;
+  line-height:1.8;
 }
 
 /* RESPONSIVE */
@@ -229,14 +211,134 @@ footer{
 <section id="hero" class="hero">
   <div class="hero-context left">Beauty · Medical Aesthetics</div>
   <div class="hero-context right">Newport Beach, CA</div>
-  <video autoplay muted loop playsinline>
+  <video autoplay muted loop playsinline preload="auto">
     <source src="hero.mp4" type="video/mp4">
   </video>
   <div class="hero-inner">
     <h1>Jiang Yingying</h1>
     <p>
-      I believe beauty is not a result, but a continuous optimization process.
+      I believe beauty is not a result, but a continuous optimization process.  
       Progress, not perfection.
+    </p>
+  </div>
+</section>
+
+<!-- OBSERVATION -->
+<section class="container">
+  <div class="block">
+    <img src="hero-02.jpg">
+    <div class="text-column">
+      <h3>Observation</h3>
+      <h2>From Experience to Systems</h2>
+      <p>
+        My work spans two interconnected worlds:
+        regional growth and retail operations for a Swiss luxury skincare brand,
+        and system-level planning within medical aesthetics.
+      </p>
+      <p>
+        What connects them is not aesthetics, but structure —
+        using professional discipline and data to turn experience
+        into repeatable outcomes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TIMELINE -->
+<section id="about" class="container">
+  <div class="block">
+    <img src="profile-01.jpg">
+    <div class="text-column">
+      <h3>About</h3>
+      <h2>Early Foundations</h2>
+      <p>
+        From 2005 to 2010, I studied Economics and Management at UCLA,
+        establishing a solid foundation in business analysis and management thinking.
+      </p>
+      <p>
+        This academic grounding shaped how I approach decision-making:
+        structured, data-aware, and accountable.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block reverse">
+    <img src="profile-02.jpg">
+    <div class="text-column">
+      <h2>Understanding Brand Reality</h2>
+      <p>
+        Prior to Oxford, I independently relocated to Shanghai
+        and joined Edelman, starting from an assistant role.
+      </p>
+      <p>
+        The intensity of frontline public relations work
+        gave me a clear understanding of brand hierarchy,
+        organizational dynamics, and commercial reality.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <img src="work-01.jpg">
+    <div class="text-column">
+      <h2>Operational Sensitivity</h2>
+      <p>
+        In 2012, I joined Shiseido as the starting point of my industry career.
+        This experience sharpened my sensitivity to retail systems,
+        standardized brand operations, supply rhythm,
+        and in-store execution.
+      </p>
+      <p>
+        It is also why I am able to read operational complexity fluently
+        across both luxury beauty and medical aesthetics today.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block reverse">
+    <img src="work-02.jpg">
+    <div class="text-column">
+      <h2>Advanced & Cross-Cultural Studies</h2>
+      <p>
+        In 2011, I pursued advanced studies in Marketing, Management,
+        and Finance at Oxford, focusing on cross-cultural market strategy.
+      </p>
+      <p>
+        From 2021 to 2023, I further engaged in executive and doctoral-level studies
+        at USC, researching global luxury brand operations
+        and high-end consumer behavior.
+      </p>
+      <p>
+        Alongside this, I strengthened my data capabilities,
+        working with SQL for data cleaning, analysis, and visualization.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY -->
+<section id="industry" class="container section-dark">
+  <div class="text-column">
+    <h3>Industry Perspective</h3>
+    <h2>Long-Term Trust Over Short-Term Excitement</h2>
+    <div class="industry-image">
+      <img src="industry-perspective.jpg" alt="Industry Perspective">
+    </div>
+    <p>
+      In beauty and medical aesthetics, short-term stimulation is easy.
+      Sustainable value, however, requires discipline, structure,
+      and respect for long-term trust.
+    </p>
+    <p>
+      My focus is not on one-off results,
+      but on building systems that balance brand integrity,
+      medical responsibility, and operational feasibility.
     </p>
   </div>
 </section>
@@ -249,7 +351,7 @@ footer{
       <h3>What I Do</h3>
       <h2>Luxury Beauty Operations</h2>
       <p>
-        As Non-executive director for La Prairie in California,
+        As Regional Marketing Director for La Prairie in California,
         I participate in all major strategic and operational decision meetings.
       </p>
       <p>
@@ -280,11 +382,60 @@ footer{
   </div>
 </section>
 
+<!-- AWARDS -->
+<section id="awards" class="container">
+  <div class="block">
+    <img src="award-01.jpg">
+    <div class="text-column">
+      <h3>Recognition</h3>
+      <h2>La Prairie Annual Top Sales Award</h2>
+      <p>
+        Awarded in 2023 for regional performance driven by disciplined planning,
+        execution excellence, and cross-functional collaboration.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block reverse">
+    <img src="award-02.jpg">
+    <div class="text-column">
+      <h2>The Legend of Caviar · Rodeo Drive</h2>
+      <p>
+        A themed art exhibition and VIP dinner event in Beverly Hills.
+      </p>
+      <p>
+        Within 48 hours, California caviar collection sales
+        increased by 35% year-over-year
+        and the campaign was cited by headquarters
+        as a benchmark luxury marketing case.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block">
+    <img src="award-03.jpg">
+    <div class="text-column">
+      <h2>Community & Philanthropy</h2>
+      <p>
+        Recognized by Foster Love in 2024
+        for sustained philanthropic engagement
+        and community involvement.
+      </p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
-    Jiang Yingying<br>
-    601 Newport Center Dr, Newport Beach, CA 92660<br>
-    haileyjiang1018@gmail.com
+    Jiang Yingying<br><br>
+    <strong>Work Email</strong><br>
+    haileyjiang1018@gmail.com<br><br>
+    <strong>Company Address</strong><br>
+    601 Newport Center Dr, Newport Beach, CA 92660
   </div>
 </footer>
 
