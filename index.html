@@ -86,7 +86,7 @@ nav a{
   margin-bottom:22px;
 }
 .hero-inner p{
-  max-width:680px;
+  max-width:720px;
   font-size:18px;
   color:#e5e7eb;
 }
@@ -103,7 +103,7 @@ nav a{
   color:rgba(229,231,235,.45);
   line-height:1.6;
 }
-.hero-context.left{left:36px;text-align:left}
+.hero-context.left{left:36px}
 .hero-context.right{right:36px;text-align:right}
 
 /* SECTIONS */
@@ -123,17 +123,14 @@ h3{
 }
 p{font-size:16px;color:#444;margin-bottom:18px}
 
-/* BLOCK */
+/* BLOCKS */
 .block{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:70px;
   align-items:center;
 }
-.block.reverse{
-  grid-template-columns:1fr 1fr;
-  direction:rtl;
-}
+.block.reverse{direction:rtl}
 .block.reverse > *{direction:ltr}
 .block img{
   width:100%;
@@ -161,7 +158,10 @@ footer{
   font-size:14px;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
+@media(max-width:1399px){
+  .hero-inner h1{font-size:46px}
+}
 @media(max-width:900px){
   .hero-inner h1{font-size:38px}
   .container{padding:80px 16px}
@@ -185,41 +185,40 @@ footer{
 
 <!-- HERO -->
 <section id="hero" class="hero">
-
   <div class="hero-context left">
-    Industry<br>
     Beauty · Medical Aesthetics
   </div>
-
   <div class="hero-context right">
-    Based in<br>
     Newport Beach, CA
   </div>
-
   <video autoplay muted loop playsinline preload="auto">
     <source src="hero.mp4" type="video/mp4">
   </video>
-
   <div class="hero-inner">
     <h1>Jiang Yingying</h1>
     <p>
-      I focus on how industries evolve over time —  
-      and how judgment, structure, and discipline compound into long-term outcomes.
+      I believe beauty is not a result, but a continuous optimization process.  
+      Progress, not perfection.
     </p>
   </div>
 </section>
 
-<!-- SECOND VISUAL -->
+<!-- OBSERVATION -->
 <section class="container">
   <div class="block">
     <img src="hero-02.jpg">
     <div class="text-column">
       <h3>Observation</h3>
-      <h2>From Titles to Thinking</h2>
+      <h2>From Experience to Systems</h2>
       <p>
-        I don’t approach this industry through titles or trends.
-        What matters to me is how decisions age —
-        operationally, ethically, and structurally.
+        My work spans two interconnected worlds:
+        regional growth and retail operations for a Swiss luxury skincare brand,
+        and system-level planning within medical aesthetics.
+      </p>
+      <p>
+        What connects them is not aesthetics, but structure —
+        using professional discipline and data to turn experience
+        into repeatable outcomes.
       </p>
     </div>
   </div>
@@ -231,16 +230,14 @@ footer{
     <img src="profile-01.jpg">
     <div class="text-column">
       <h3>About</h3>
-      <h2>Entering the Industry Through Reality</h2>
+      <h2>Early Foundations</h2>
       <p>
-        I didn’t enter this field through a predefined career plan.
-        My understanding of professionalism was shaped early by direct exposure
-        to operational reality — where brand ideals, hierarchy,
-        and commercial constraints intersect.
+        From 2005 to 2010, I studied Economics and Management at UCLA,
+        establishing a solid foundation in business analysis and management thinking.
       </p>
       <p>
-        Starting from the ground level, I learned how systems function under pressure,
-        and how upstream decisions translate into downstream outcomes.
+        This academic grounding shaped how I approach decision-making:
+        structured, data-aware, and accountable.
       </p>
     </div>
   </div>
@@ -250,15 +247,15 @@ footer{
   <div class="block reverse">
     <img src="profile-02.jpg">
     <div class="text-column">
-      <h2>Building a Structured Business Foundation</h2>
+      <h2>Understanding Brand Reality</h2>
       <p>
-        My academic training began with Economics and Management at UCLA,
-        forming a rigorous analytical foundation for business decision-making.
+        Prior to Oxford, I independently relocated to Shanghai
+        and joined Edelman, starting from an assistant role.
       </p>
       <p>
-        Prior to Oxford, I independently relocated to Shanghai and joined Edelman,
-        where frontline public relations work sharpened my understanding
-        of brand systems, organizational dynamics, and real-world execution.
+        The intensity of frontline public relations work
+        gave me a clear understanding of brand hierarchy,
+        organizational dynamics, and commercial reality.
       </p>
     </div>
   </div>
@@ -268,15 +265,15 @@ footer{
   <div class="block">
     <img src="work-01.jpg">
     <div class="text-column">
-      <h2>From Global Training to Operational Sensitivity</h2>
+      <h2>Operational Sensitivity</h2>
       <p>
         In 2012, I joined Shiseido as the starting point of my industry career.
-        This experience shaped my sensitivity to retail systems,
+        This experience sharpened my sensitivity to retail systems,
         standardized brand operations, supply rhythm,
         and in-store execution.
       </p>
       <p>
-        It is also why I can read operational complexity fluently
+        It is also why I am able to read operational complexity fluently
         across both luxury beauty and medical aesthetics today.
       </p>
     </div>
@@ -287,15 +284,19 @@ footer{
   <div class="block reverse">
     <img src="work-02.jpg">
     <div class="text-column">
-      <h2>Advanced Studies & Cross-Cultural Strategy</h2>
+      <h2>Advanced & Cross-Cultural Studies</h2>
       <p>
-        At Oxford, I pursued advanced studies in Marketing, Management,
-        and Finance, focusing on cross-cultural market strategy.
+        In 2011, I pursued advanced studies in Marketing, Management,
+        and Finance at Oxford, focusing on cross-cultural market strategy.
       </p>
       <p>
-        Through executive and doctoral-level coursework at USC,
-        I further deepened my research into global luxury brand operations
+        From 2021 to 2023, I further engaged in executive and doctoral-level studies
+        at USC, researching global luxury brand operations
         and high-end consumer behavior.
+      </p>
+      <p>
+        Alongside this, I strengthened my data capabilities,
+        working with SQL for data cleaning, analysis, and visualization.
       </p>
     </div>
   </div>
@@ -305,25 +306,56 @@ footer{
 <section id="industry" class="container section-dark">
   <div class="text-column">
     <h3>Industry Perspective</h3>
-    <h2>Long-Term Value Over Short-Term Stimulation</h2>
+    <h2>Long-Term Trust Over Short-Term Excitement</h2>
     <p>
-      My work spans two interconnected worlds:
-      regional growth and retail operations for a Swiss luxury skincare brand,
-      and system-level planning within medical aesthetics.
+      In beauty and medical aesthetics, short-term stimulation is easy.
+      Sustainable value, however, requires discipline, structure,
+      and respect for long-term trust.
     </p>
     <p>
-      What connects them is not aesthetics, but structure —
-      the ability to translate experience into repeatable,
-      data-informed results.
+      My focus is not on one-off results,
+      but on building systems that balance brand integrity,
+      medical responsibility, and operational feasibility.
     </p>
-    <p>
-      In an industry often driven by short-term stimulation,
-      sustainable value is built through discipline,
-      operational clarity,
-      and long-term trust between brand,
-      practitioner,
-      and consumer.
-    </p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="container">
+  <div class="block">
+    <img src="detail-01.jpg">
+    <div class="text-column">
+      <h3>What I Do</h3>
+      <h2>Luxury Beauty Operations</h2>
+      <p>
+        As Regional Marketing Director for La Prairie in California,
+        I participate in all major strategic and operational decision meetings.
+      </p>
+      <p>
+        My responsibilities include translating strategy into actionable plans,
+        overseeing sales planning, team training,
+        VIP activations, retail operations,
+        and performance reporting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="block reverse">
+    <img src="detail-02.jpg">
+    <div class="text-column">
+      <h2>Medical Aesthetics Management</h2>
+      <p>
+        In parallel, I co-invest and participate in BioMed Systems,
+        a high-end medical aesthetics equipment and skincare import business.
+      </p>
+      <p>
+        My focus lies in non-invasive energy-based devices and injectables,
+        emphasizing personalized planning, safety,
+        and long-term trust over one-time transactions.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -333,11 +365,10 @@ footer{
     <img src="award-01.jpg">
     <div class="text-column">
       <h3>Recognition</h3>
-      <h2>Regional Performance Excellence</h2>
+      <h2>La Prairie Annual Top Sales Award</h2>
       <p>
-        Recognized with La Prairie’s Annual Top Sales Award
-        for regional performance driven by disciplined planning,
-        execution, and cross-functional coordination.
+        Awarded in 2023 for regional performance driven by disciplined planning,
+        execution excellence, and cross-functional collaboration.
       </p>
     </div>
   </div>
@@ -349,13 +380,12 @@ footer{
     <div class="text-column">
       <h2>The Legend of Caviar · Rodeo Drive</h2>
       <p>
-        A themed art exhibition and private VIP dinner event
-        hosted on Rodeo Drive, Beverly Hills.
+        A themed art exhibition and VIP dinner event in Beverly Hills.
       </p>
       <p>
-        Within 48 hours post-event,
-        California caviar collection sales increased by 35% year-over-year,
-        and the campaign was later cited by headquarters
+        Within 48 hours, California caviar collection sales
+        increased by 35% year-over-year
+        and the campaign was cited by headquarters
         as a benchmark luxury marketing case.
       </p>
     </div>
@@ -366,14 +396,11 @@ footer{
   <div class="block">
     <img src="award-03.jpg">
     <div class="text-column">
-      <h2>Community & Philanthropic Recognition</h2>
+      <h2>Community & Philanthropy</h2>
       <p>
-        Awarded by Foster Love for sustained philanthropic engagement
+        Recognized by Foster Love in 2024
+        for sustained philanthropic engagement
         and community involvement.
-      </p>
-      <p>
-        I consider social responsibility a long-term commitment,
-        not an occasional gesture.
       </p>
     </div>
   </div>
